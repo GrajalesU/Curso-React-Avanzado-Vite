@@ -1,7 +1,7 @@
 import React from "react";
 import { MdFavoriteBorder } from "react-icons/md";
 const DEFAULT_IMG =
-  "https://res.cloudinary.com/midudev/image/upload/w_150/v1555671700/category_dogs.jpg";
+  "https://res.cloudinary.com/midudev/image/upload/w_300/q_80/v1560262103/dogs.png";
 
 export default function PhotoCard({ id, likes = 0, src = DEFAULT_IMG }) {
   return (
