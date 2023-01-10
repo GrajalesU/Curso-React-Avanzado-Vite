@@ -1,11 +1,30 @@
 import React, { useEffect, useRef, useState } from "react";
-import { MdFavoriteBorder } from "react-icons/md";
+import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 const DEFAULT_IMG =
   "https://res.cloudinary.com/midudev/image/upload/w_300/q_80/v1560262103/dogs.png";
 
 export default function PhotoCard({ id, likes = 0, src = DEFAULT_IMG }) {
   const ref = useRef(null);
+  console.log(id);
   const [show, setShow] = useState(false);
+  const [liked, setLiked] = useState(() => {
+    try {
+      const like = window.localStorage.getItem(`like-${id}`);
+      return like;
+    } catch (e) {
+      return false;
+    }
+  });
+
+  const setLocaleStorage = (value) => {
+    try {
+      window.localStorage.setItem(`like-${id}`, value);
+      setLiked(value);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
@@ -38,8 +57,17 @@ export default function PhotoCard({ id, likes = 0, src = DEFAULT_IMG }) {
             </div>
           </a>
 
-          <button className="pt-2 flex items-center gap-1">
-            <MdFavoriteBorder size="32px" />
+          <button
+            className="pt-2 flex items-center gap-1"
+            onClick={() => {
+              setLocaleStorage(!liked);
+            }}
+          >
+            {liked ? (
+              <MdFavorite size="32px" />
+            ) : (
+              <MdFavoriteBorder size="32px" />
+            )}
             {likes} likes!
           </button>
         </div>

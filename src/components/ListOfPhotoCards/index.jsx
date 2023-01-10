@@ -4,7 +4,7 @@ export default function ListOfPhotoCards() {
   return (
     <ul>
       {[1, 2, 3].map((photoCard) => (
-        <PhotoCard key={photoCard} />
+        <PhotoCard key={photoCard} id={photoCard} />
       ))}
     </ul>
   );
