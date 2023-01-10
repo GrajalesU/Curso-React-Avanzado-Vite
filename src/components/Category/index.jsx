@@ -1,8 +1,7 @@
 import React from "react";
+import footPrint from "../../assets/footPrint.jpg";
 
-const DEFAULT_IMAGE = "https://i.imgur.com/dJa0Hpl.jpg";
-
-export default function Category({ cover = DEFAULT_IMAGE, path, emoji = "?" }) {
+export default function Category({ cover = footPrint, path, emoji = "🐾" }) {
   return (
     <a href={path} className=" flex flex-col text-center no-underline w-[75px]">
       <img
