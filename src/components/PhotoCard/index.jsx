@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import FavButton from "../FavButton";
+import { Link } from "react-router-dom";
 
 import useNearScreen from "../../hooks/useNearScreen.js";
 const DEFAULT_IMG =
@@ -15,14 +16,14 @@ export default function PhotoCard({ id, likes = 0, src = DEFAULT_IMG }) {
           className="animate__animated animate__fadeIn"
           style={{ "--animate-duration": "1s" }}
         >
-          <a href={`/${id}`}>
+          <Link to={`/${id}`}>
             <div className="rounded-lg block h-0 overflow-hidden pt-[56.25%] relative w-full">
               <img
                 className="shadow-sm shadow-gray-100 h-full object-cover absolute top-0 w-full"
                 src={src}
               />
             </div>
-          </a>
+          </Link>
           <FavButton likes={likes} id={id} />
         </div>
       )}

@@ -1,7 +1,7 @@
 import React from "react";
-import ListOfCategories from "./components/ListOfCategories";
-import ListOfPhotoCards from "./components/ListOfPhotoCards";
 import PetDetail from "./routes/PetDetail";
+import Home from "./routes/Home";
+import FilteredHome from "./routes/FilteredHome";
 import Root from "./routes/root";
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -12,16 +12,15 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: (
-          <>
-            <ListOfCategories />
-            <ListOfPhotoCards />
-          </>
-        ),
+        element: <Home />,
       },
       {
         path: "/:petId",
         element: <PetDetail />,
+      },
+      {
+        path: "/photos/:categoryId",
+        element: <FilteredHome />,
       },
     ],
   },
