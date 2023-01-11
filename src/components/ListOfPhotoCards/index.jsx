@@ -21,7 +21,7 @@ export default function ListOfPhotoCards({ categoryId }) {
   });
 
   if (error) {
-    return <h2>Internal Server Error</h2>;
+    return <pre>Internal Server Error</pre>;
   }
 
   if (loading) {

@@ -16,7 +16,7 @@ export default function PhotoCard({ id, likes = 0, src = DEFAULT_IMG }) {
           className="animate__animated animate__fadeIn"
           style={{ "--animate-duration": "1s" }}
         >
-          <a href={`/detail/${id}`}>
+          <a href={`/${id}`}>
             <div className="rounded-lg block h-0 overflow-hidden pt-[56.25%] relative w-full">
               <img
                 className="shadow-sm shadow-gray-100 h-full object-cover absolute top-0 w-full"

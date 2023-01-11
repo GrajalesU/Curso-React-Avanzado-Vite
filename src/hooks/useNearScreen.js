@@ -8,10 +8,7 @@ export default function useNearScreen() {
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
         setShow(true);
-        console.log("i'm in");
         observer.disconnect();
-      } else {
-        console.log("i'm not");
       }
     });
 
