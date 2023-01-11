@@ -1,10 +1,15 @@
-import React from "react";
-import PetDetail from "./routes/PetDetail";
-import Home from "./routes/Home";
+import "animate.css";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Fav from "./routes/Fav";
 import FilteredHome from "./routes/FilteredHome";
+import Home from "./routes/Home";
+import PetDetail from "./routes/PetDetail";
+import User from "./routes/User";
 import Root from "./routes/root";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,11 +27,23 @@ const router = createBrowserRouter([
         path: "/photos/:categoryId",
         element: <FilteredHome />,
       },
+      {
+        path: '/fav',
+        element:  <ProtectedRoute>
+                    <Fav/>
+                  </ProtectedRoute>
+      },
+      {
+        path: '/user',
+        element:  <ProtectedRoute>
+                    <User/>
+                  </ProtectedRoute>
+      }
     ],
   },
 ]);
 
-import "animate.css";
+
 
 function App() {
   return <RouterProvider router={router} />;
