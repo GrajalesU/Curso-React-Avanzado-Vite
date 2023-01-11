@@ -29,7 +29,7 @@ export default function ListOfPhotoCards({ categoryId }) {
   }
 
   return (
-    <ul>
+    <ul className="mb-14">
       {data.photos.map((photo) => (
         <PhotoCard key={photo.id} {...photo} />
       ))}
