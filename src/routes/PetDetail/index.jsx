@@ -29,7 +29,5 @@ export default function PetDetail() {
     return <h2>Loading...</h2>;
   }
 
-  console.log(data);
-
   return <PhotoCard {...data.photo} />;
 }
