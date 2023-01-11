@@ -8,6 +8,7 @@ import User from "./routes/User";
 import Root from "./routes/root";
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import NotRegisteredUser from "./routes/User/NotRegisteredUser";
 
 
 const router = createBrowserRouter([
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
         element:  <ProtectedRoute>
                     <User/>
                   </ProtectedRoute>
+      },
+      {
+        path: "/login",
+        element: <NotRegisteredUser />
       }
     ],
   },
