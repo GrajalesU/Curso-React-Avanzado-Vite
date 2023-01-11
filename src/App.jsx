@@ -9,7 +9,7 @@ function App() {
     <div>
       <Logo />
       <ListOfCategories />
-      <ListOfPhotoCards />
+      <ListOfPhotoCards categoryId={2} />
     </div>
   );
 }
