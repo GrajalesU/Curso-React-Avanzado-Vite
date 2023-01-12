@@ -1,5 +1,6 @@
 import { gql, useMutation } from "@apollo/client";
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Link, useNavigate } from "react-router-dom";
 import Loader from "../../components/Loader";
 import UserForm from "../../components/UserForm";
@@ -30,20 +31,25 @@ export default function Login() {
   }
 
   return (
-    <div>
-      <h2 className="font-semibold text-lg py-2 ml-2">Login</h2>
-      <UserForm action={login} btnContent={"Inicia sesión"} />
+    <>
+      <Helmet>
+        <title>PetGram | Login</title>
+      </Helmet>
+      <div>
+        <h2 className="font-semibold text-lg py-2 ml-2">Login</h2>
+        <UserForm action={login} btnContent={"Inicia sesión"} />
 
-      <span className="text-red-600 font-bold ml-4">
-        {error && `Oh no, ${error.message} :c`}
-      </span>
+        <span className="text-red-600 font-bold ml-4">
+          {error && `Oh no, ${error.message} :c`}
+        </span>
 
-      <div className="ml-2">
-        <span>Don't have an account?</span>
-        <Link to={"/register"} className="ml-3 font-semibold text-[#758bff]">
-          Register
-        </Link>
+        <div className="ml-2">
+          <span>Don't have an account?</span>
+          <Link to={"/register"} className="ml-3 font-semibold text-[#758bff]">
+            Register
+          </Link>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

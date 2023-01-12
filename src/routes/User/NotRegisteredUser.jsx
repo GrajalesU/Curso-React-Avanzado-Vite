@@ -1,5 +1,6 @@
 import { gql, useMutation } from "@apollo/client";
 import React from "react";
+import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import Loader from "../../components/Loader";
 import UserForm from "../../components/UserForm";
@@ -31,6 +32,9 @@ export default function NotRegisteredUser() {
 
   return (
     <>
+      <Helmet>
+        <title>PetGram | Register</title>
+      </Helmet>
       <div>
         <h2 className="font-semibold text-lg py-2 ml-2">Register</h2>
         <UserForm action={registerUser} btnContent={"Registrarse"} />
@@ -40,8 +44,6 @@ export default function NotRegisteredUser() {
           </span>
         )}
       </div>
-      {/* <h2 className="font-semibold text-lg py-2">Inicia sesión</h2>
-      <UserForm handleForm={handleLogin} btnContent={"Inicia sesión"} /> */}
     </>
   );
 }

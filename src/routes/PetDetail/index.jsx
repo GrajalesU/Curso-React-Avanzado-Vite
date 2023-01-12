@@ -34,5 +34,9 @@ export default function PetDetail() {
     return <NotFound />;
   }
 
-  return <PhotoCard {...data.photo} />;
+  return (
+    <>
+      <PhotoCard {...data.photo} />
+    </>
+  );
 }
