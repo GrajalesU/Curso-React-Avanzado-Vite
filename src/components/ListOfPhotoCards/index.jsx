@@ -25,7 +25,13 @@ export default function ListOfPhotoCards({ categoryId }) {
   }
 
   if (loading) {
-    return <h2>Loading...</h2>;
+    return (
+      <ul className="mb-14">
+        {[1,2,3].map((element) => (
+          <PhotoCard key={element}/>
+        ))}
+      </ul>
+    );
   }
 
   return (

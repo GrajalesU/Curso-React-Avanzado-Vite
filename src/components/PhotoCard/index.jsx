@@ -4,7 +4,7 @@ import FavButton from "../FavButton";
 
 import useNearScreen from "../../hooks/useNearScreen.js";
 const DEFAULT_IMG =
-  "https://res.cloudinary.com/midudev/image/upload/w_300/q_80/v1560262103/dogs.png";
+  "https://dummyimage.com/500x281/c4c4c4/c4c4c4";
 
 export default function PhotoCard({ id, likes = 0, src = DEFAULT_IMG }) {
   const [show, ref] = useNearScreen();

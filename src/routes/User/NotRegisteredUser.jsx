@@ -1,24 +1,48 @@
+import { gql, useMutation } from "@apollo/client";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Loader from "../../components/Loader";
+import UserForm from "../../components/UserForm";
 import { useUser } from "../../context/UserContext";
 
+const REGISTER_USER = gql`
+  mutation signup($input: UserCredentials!) {
+    signup(input: $input)
+  }
+`;
+
 export default function NotRegisteredUser() {
-  const { isAuth, activateAuth, logout } = useUser();
   const navigate = useNavigate();
-  const handleLogin = (e) => {
-    e.preventDefault();
-    if (!isAuth) {
-      activateAuth();
-      return navigate("/");
-    } else return logout();
-  };
+  const { activateAuth } = useUser();
+  const [registerUser, { data, loading, error }] = useMutation(REGISTER_USER);
+  console.log(error?.message);
+
+  if (loading)
+    return (
+      <div>
+        <h2 className="font-semibold text-lg py-2 mb-8">Registrarse</h2>
+        <Loader size="100px" />
+      </div>
+    );
+
+  if (data) {
+    activateAuth();
+    navigate("/");
+  }
+
   return (
-    <form onSubmit={handleLogin}>
-      {isAuth ? (
-        <button type="submit">Cerrar sesión</button>
-      ) : (
-        <button type="submit">Iniciar sesión</button>
-      )}
-    </form>
+    <>
+      <div>
+        <h2 className="font-semibold text-lg py-2">Registrarse</h2>
+        <UserForm action={registerUser} btnContent={"Registrarse"} />
+        {error && (
+          <span className="text-red-600 font-bold ml-4">
+            Oh no, {error.message} :c
+          </span>
+        )}
+      </div>
+      {/* <h2 className="font-semibold text-lg py-2">Inicia sesión</h2>
+      <UserForm handleForm={handleLogin} btnContent={"Inicia sesión"} /> */}
+    </>
   );
 }
