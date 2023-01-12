@@ -15,14 +15,14 @@ export default function UserForm({ action, btnContent }) {
       <input
         type="email"
         placeholder="Email"
-        required
+        // required
         {...email}
         className="border-[#ccc] border rounded py-2 px-1 block w-11/12 mx-auto"
       />
       <input
         type="password"
         placeholder="Password"
-        required
+        // required
         {...password}
         className="border-[#ccc] border rounded py-2 px-1 block w-11/12 mx-auto"
       />

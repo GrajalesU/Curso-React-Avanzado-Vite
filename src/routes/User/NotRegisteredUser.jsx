@@ -15,7 +15,6 @@ export default function NotRegisteredUser() {
   const navigate = useNavigate();
   const { activateAuth } = useUser();
   const [registerUser, { data, loading, error }] = useMutation(REGISTER_USER);
-  console.log(error?.message);
 
   if (loading)
     return (
@@ -33,7 +32,7 @@ export default function NotRegisteredUser() {
   return (
     <>
       <div>
-        <h2 className="font-semibold text-lg py-2">Registrarse</h2>
+        <h2 className="font-semibold text-lg py-2 ml-2">Registrarse</h2>
         <UserForm action={registerUser} btnContent={"Registrarse"} />
         {error && (
           <span className="text-red-600 font-bold ml-4">
