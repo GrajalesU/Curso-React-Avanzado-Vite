@@ -1,6 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
-import FavButton from "../FavButton";
+import React from "react";
 import { Link } from "react-router-dom";
+import FavButton from "../FavButton";
 
 import useNearScreen from "../../hooks/useNearScreen.js";
 const DEFAULT_IMG =

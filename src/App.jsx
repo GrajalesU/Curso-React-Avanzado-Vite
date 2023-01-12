@@ -10,7 +10,6 @@ import Root from "./routes/root";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import NotRegisteredUser from "./routes/User/NotRegisteredUser";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,26 +28,28 @@ const router = createBrowserRouter([
         element: <FilteredHome />,
       },
       {
-        path: '/fav',
-        element:  <ProtectedRoute>
-                    <Fav/>
-                  </ProtectedRoute>
+        path: "/fav",
+        element: (
+          <ProtectedRoute>
+            <Fav />
+          </ProtectedRoute>
+        ),
       },
       {
-        path: '/user',
-        element:  <ProtectedRoute>
-                    <User/>
-                  </ProtectedRoute>
+        path: "/user",
+        element: (
+          <ProtectedRoute>
+            <User />
+          </ProtectedRoute>
+        ),
       },
       {
         path: "/login",
-        element: <NotRegisteredUser />
-      }
+        element: <NotRegisteredUser />,
+      },
     ],
   },
 ]);
-
-
 
 function App() {
   return <RouterProvider router={router} />;

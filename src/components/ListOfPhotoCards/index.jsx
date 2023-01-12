@@ -1,6 +1,6 @@
+import { gql, useQuery } from "@apollo/client";
 import React from "react";
 import PhotoCard from "../PhotoCard";
-import { useQuery, gql } from "@apollo/client";
 
 const GET_PHOTOS = gql`
   query getPhotos($categoryId: ID) {

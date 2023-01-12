@@ -1,7 +1,7 @@
-import React from "react";
-import useLocalStorage from "../../hooks/useLocalStorage.js";
-import { MdFavoriteBorder, MdFavorite } from "react-icons/md";
 import { gql, useMutation } from "@apollo/client";
+import React from "react";
+import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
+import useLocalStorage from "../../hooks/useLocalStorage.js";
 
 const LIKE_PHOTO = gql`
   mutation likeAnonymousPhoto($input: LikePhoto!) {

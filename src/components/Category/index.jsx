@@ -1,6 +1,6 @@
 import React from "react";
-import footPrint from "../../assets/footPrint.jpg";
 import { Link } from "react-router-dom";
+import footPrint from "../../assets/footPrint.jpg";
 
 export default function Category({
   cover = footPrint,

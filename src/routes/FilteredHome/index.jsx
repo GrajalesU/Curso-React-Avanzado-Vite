@@ -1,7 +1,7 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 import ListOfCategories from "../../components/ListOfCategories";
 import ListOfPhotoCards from "../../components/ListOfPhotoCards";
-import { useParams } from "react-router-dom";
 
 export default function FilteredHome() {
   const { categoryId } = useParams();

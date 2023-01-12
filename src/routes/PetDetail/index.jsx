@@ -1,7 +1,7 @@
+import { gql, useQuery } from "@apollo/client";
 import React from "react";
-import PhotoCard from "../../components/PhotoCard";
-import { useQuery, gql } from "@apollo/client";
 import { useParams } from "react-router-dom";
+import PhotoCard from "../../components/PhotoCard";
 
 const GET_PHOTO = gql`
   query getSinglePhoto($id: ID!) {
