@@ -2,6 +2,7 @@ import { gql, useQuery } from "@apollo/client";
 import React from "react";
 import { useParams } from "react-router-dom";
 import PhotoCard from "../../components/PhotoCard";
+import NotFound from "../NotFound";
 
 const GET_PHOTO = gql`
   query getSinglePhoto($id: ID!) {
@@ -27,6 +28,10 @@ export default function PetDetail() {
 
   if (loading) {
     return <h2>Loading...</h2>;
+  }
+
+  if (data?.photo?.id === null) {
+    return <NotFound />;
   }
 
   return <PhotoCard {...data.photo} />;

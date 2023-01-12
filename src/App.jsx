@@ -8,6 +8,7 @@ import User from "./routes/User";
 import Root from "./routes/root";
 
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import NotFound from "./routes/NotFound";
 import Login from "./routes/User/Login";
 import NotRegisteredUser from "./routes/User/NotRegisteredUser";
 
@@ -15,6 +16,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <NotFound />,
     children: [
       {
         path: "/",
