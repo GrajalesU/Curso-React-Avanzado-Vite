@@ -25,7 +25,7 @@ export default function Login() {
     );
 
   if (data) {
-    activateAuth();
+    activateAuth(data.login);
     navigate("/");
   }
 

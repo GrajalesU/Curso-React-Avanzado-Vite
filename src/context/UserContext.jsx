@@ -3,10 +3,14 @@ import { createContext, useContext, useState } from "react";
 const UserContext = createContext();
 
 export function UserProvider({ children }) {
-  const [isAuth, setIsAuth] = useState(false);
+  const [isAuth, setIsAuth] = useState(() => {
+    const token = window.sessionStorage.getItem("token");
+    return token ? true : false;
+  });
   const value = {
     isAuth,
-    activateAuth: () => {
+    activateAuth: (jwt) => {
+      window.sessionStorage.setItem("token", jwt);
       setIsAuth(true);
     },
     logout: () => {

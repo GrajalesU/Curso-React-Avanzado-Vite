@@ -1,13 +1,36 @@
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import {
+  ApolloClient,
+  ApolloLink,
+  ApolloProvider,
+  HttpLink,
+  InMemoryCache,
+  concat,
+} from "@apollo/client";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { UserProvider } from "./context/UserContext";
 import "./index.css";
 
-const client = new ApolloClient({
+const httpLink = new HttpLink({
   uri: "https://petgram-api-grajalesu.vercel.app/graphql",
+});
+
+const authMiddleware = new ApolloLink((operation, forward) => {
+  const token = window.sessionStorage.getItem("token");
+  const authorization = token ? `Bearer ${token}` : "";
+  operation.setContext({
+    headers: {
+      authorization,
+    },
+  });
+
+  return forward(operation);
+});
+
+const client = new ApolloClient({
   cache: new InMemoryCache(),
+  link: concat(authMiddleware, httpLink),
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(

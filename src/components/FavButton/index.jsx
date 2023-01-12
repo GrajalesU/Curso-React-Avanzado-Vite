@@ -4,8 +4,8 @@ import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
 import useLocalStorage from "../../hooks/useLocalStorage.js";
 
 const LIKE_PHOTO = gql`
-  mutation likeAnonymousPhoto($input: LikePhoto!) {
-    likeAnonymousPhoto(input: $input) {
+  mutation likePhoto($input: LikePhoto!) {
+    likePhoto(input: $input) {
       id
       liked
       likes

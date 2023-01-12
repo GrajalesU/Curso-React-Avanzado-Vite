@@ -25,7 +25,7 @@ export default function NotRegisteredUser() {
     );
 
   if (data) {
-    activateAuth();
+    activateAuth( data.signup);
     navigate("/");
   }
 
