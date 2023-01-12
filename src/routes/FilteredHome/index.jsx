@@ -6,7 +6,6 @@ import ListOfPhotoCards from "../../components/ListOfPhotoCards";
 export default function FilteredHome() {
   const { categoryId } = useParams();
   const id = categoryId.split("-").splice(-1)[0];
-  console.log(id);
   return (
     <>
       <ListOfCategories />

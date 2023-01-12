@@ -19,20 +19,21 @@ export default function NotRegisteredUser() {
   if (loading)
     return (
       <div>
-        <h2 className="font-semibold text-lg py-2 mb-8">Registrarse</h2>
+        <h2 className="font-semibold text-lg py-2 mb-8 ml-2">Register</h2>
         <Loader size="100px" />
       </div>
     );
 
   if (data) {
-    activateAuth( data.signup);
+    console.log(data)
+    activateAuth(data.signup);
     navigate("/");
   }
 
   return (
     <>
       <div>
-        <h2 className="font-semibold text-lg py-2 ml-2">Registrarse</h2>
+        <h2 className="font-semibold text-lg py-2 ml-2">Register</h2>
         <UserForm action={registerUser} btnContent={"Registrarse"} />
         {error && (
           <span className="text-red-600 font-bold ml-4">

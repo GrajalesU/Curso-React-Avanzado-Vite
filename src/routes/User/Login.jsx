@@ -19,7 +19,7 @@ export default function Login() {
   if (loading)
     return (
       <div>
-        <h2 className="font-semibold text-lg py-2 mb-8 ml-2">Inicia sesión</h2>
+        <h2 className="font-semibold text-lg py-2 mb-8 ml-2">Login</h2>
         <Loader size="100px" />
       </div>
     );
@@ -31,7 +31,7 @@ export default function Login() {
 
   return (
     <div>
-      <h2 className="font-semibold text-lg py-2 ml-2">Inicia sesión</h2>
+      <h2 className="font-semibold text-lg py-2 ml-2">Login</h2>
       <UserForm action={login} btnContent={"Inicia sesión"} />
 
       <span className="text-red-600 font-bold ml-4">
@@ -39,9 +39,9 @@ export default function Login() {
       </span>
 
       <div className="ml-2">
-        <span>¿Aun no tienes cuenta?</span>
+        <span>Don't have an account?</span>
         <Link to={"/register"} className="ml-3 font-semibold text-[#758bff]">
-          Regístrate
+          Register
         </Link>
       </div>
     </div>
