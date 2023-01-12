@@ -6,7 +6,7 @@ import useNearScreen from "../../hooks/useNearScreen.js";
 const DEFAULT_IMG =
   "https://dummyimage.com/500x281/c4c4c4/c4c4c4";
 
-export default function PhotoCard({ id, likes = 0, src = DEFAULT_IMG }) {
+export default function PhotoCard({ id, likes = 0, src = DEFAULT_IMG, liked }) {
   const [show, ref] = useNearScreen();
 
   return (
@@ -24,7 +24,7 @@ export default function PhotoCard({ id, likes = 0, src = DEFAULT_IMG }) {
               />
             </div>
           </Link>
-          <FavButton likes={likes} id={id} />
+          <FavButton likes={likes} id={id} liked={liked} />
         </div>
       )}
     </article>

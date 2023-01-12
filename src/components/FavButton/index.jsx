@@ -1,7 +1,7 @@
 import { gql, useMutation } from "@apollo/client";
 import React from "react";
 import { MdFavorite, MdFavoriteBorder } from "react-icons/md";
-import useLocalStorage from "../../hooks/useLocalStorage.js";
+import Loader from "../Loader";
 
 const LIKE_PHOTO = gql`
   mutation likePhoto($input: LikePhoto!) {
@@ -13,20 +13,33 @@ const LIKE_PHOTO = gql`
   }
 `;
 
-export default function FavButton({ id, likes }) {
-  const [liked, setLiked] = useLocalStorage(`like-${id}`, false);
-
-  const [likePhoto, { data, loading, error }] = useMutation(LIKE_PHOTO);
-
+export default function FavButton({ id, likes, liked }) {
+  const [likePhoto, { loading }] = useMutation(LIKE_PHOTO);
+  if (loading) {
+    return (
+      <button
+        className="pt-2 flex items-center gap-1"
+        onClick={() => {
+          likePhoto({ variables: { input: { id } } });
+        }}
+      >
+        <Loader />
+        {likes} likes!
+      </button>
+    );
+  }
   return (
     <button
       className="pt-2 flex items-center gap-1"
       onClick={() => {
-        setLiked(!liked);
-        !liked && likePhoto({ variables: { input: { id } } });
+        likePhoto({ variables: { input: { id } } });
       }}
     >
-      {liked ? <MdFavorite size="32px" /> : <MdFavoriteBorder size="32px" />}
+      {liked ? (
+        <MdFavorite size="32px" color="#758bff" />
+      ) : (
+        <MdFavoriteBorder size="32px" color="#758bff" />
+      )}
       {likes} likes!
     </button>
   );

@@ -10,7 +10,7 @@ export default function NavBar() {
         to="/"
         className="inline-flex h-full text-[#888] justify-center items-center w-full"
         style={{
-          color: pathname === "/" ? "#000" : "#888",
+          color: pathname === "/" ? "#2642cd" : "#758bff",
         }}
       >
         <MdHome size="24px" />
@@ -19,7 +19,7 @@ export default function NavBar() {
         to="/fav"
         className="inline-flex h-full text-[#888] items-center justify-center w-full"
         style={{
-          color: pathname === "/fav" ? "#000" : "#888",
+          color: pathname === "/fav" ? "#2642cd" : "#758bff",
         }}
       >
         <MdFavoriteBorder size="24px" />
@@ -28,10 +28,10 @@ export default function NavBar() {
         to="/user"
         className="inline-flex h-full text-[#888] justify-center items-center w-full"
         style={{
-          color: pathname === "/user" ? "#000" : "#888",
+          color: pathname === "/user" ? "#2642cd" : "#758bff",
         }}
       >
-        <MdPersonOutline size="24px" />
+        <MdPersonOutline size="24px"  />
       </Link>
     </nav>
   );
