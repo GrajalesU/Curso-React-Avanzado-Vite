@@ -10,11 +10,13 @@ export function UserProvider({ children }) {
   const value = {
     isAuth,
     activateAuth: (jwt) => {
-      window.sessionStorage.setItem("token", jwt);
       setIsAuth(true);
+      window.sessionStorage.setItem("token", jwt);
     },
-    logout: () => {
+    removeAuth: () => {
       setIsAuth(false);
+      window.sessionStorage.removeItem("token");
+      window.location = "/login";
     },
   };
 
