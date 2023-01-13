@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import Category from "../Category";
 
 function useCategoriesData() {
@@ -15,7 +15,7 @@ function useCategoriesData() {
   return { categories, loading };
 }
 
-export default function ListOfCategories() {
+function ListOfCategories() {
   const [showFixed, setShowFixed] = useState(false);
   const { categories, loading } = useCategoriesData();
 
@@ -69,3 +69,5 @@ export default function ListOfCategories() {
     </>
   );
 }
+
+export default memo(ListOfCategories);

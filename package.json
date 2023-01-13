@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --open --port 3000 --host",
     "build": "vite build",
-    "preview": "vite preview"
+    "build:dev" : "vite build --mode development",
+    "preview": "vite preview --host"
   },
   "dependencies": {
     "@apollo/client": "^3.7.3",
