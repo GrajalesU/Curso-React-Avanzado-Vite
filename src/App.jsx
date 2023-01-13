@@ -1,16 +1,17 @@
 import "animate.css";
+import { Suspense, lazy } from "react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Fav from "./routes/Fav";
 import FilteredHome from "./routes/FilteredHome";
 import Home from "./routes/Home";
-import PetDetail from "./routes/PetDetail";
-import User from "./routes/User";
 import Root from "./routes/root";
 
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import NotFound from "./routes/NotFound";
-import Login from "./routes/User/Login";
-import NotRegisteredUser from "./routes/User/NotRegisteredUser";
+const Fav = lazy(() => import("./routes/Fav"));
+const Login = lazy(() => import("./routes/User/Login"));
+const NotFound = lazy(() => import("./routes/NotFound"));
+const NotRegisteredUser = lazy(() => "./routes/User/NotRegisteredUser");
+const PetDetail = lazy(() => import("./routes/PetDetail"));
+const User = lazy(() => import("./routes/User"));
 
 const router = createBrowserRouter([
   {
@@ -59,7 +60,11 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <Suspense fallback={<div />}>
+      <RouterProvider router={router} />
+    </Suspense>
+  );
 }
 
 export default App;
