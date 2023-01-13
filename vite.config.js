@@ -8,7 +8,7 @@ export default defineConfig({
     react(), 
     VitePWA(
       {
-        registerType: "autoUpdate", 
+        registerType: "autoUpdate",
         devOptions:{
           enabled: true
         },
@@ -16,7 +16,7 @@ export default defineConfig({
           name: "PetGram",
           short_name: "PetGram",
           description: "With PetGram you can found the cutest pet photos",
-          theme_color: "#ffffff",
+          theme_color: "#758bff",
           background_color: "#ffffff",
           icons: [
             {
@@ -30,6 +30,25 @@ export default defineConfig({
                 "type": "image/png"
             }
         ],
+        },
+        strategies: "generateSW",
+        workbox:{
+          runtimeCaching:[
+            {
+              urlPattern: new RegExp('https://(res.clodinary.com|images.unsplash.com|https://dummyimage.com)'),
+              handler: "CacheFirst",
+              options:{
+                cacheName: "images"
+              }
+            },
+            {
+              urlPattern: new RegExp('https://petgram-tau-rosy.vercel.app'),
+              handler: "NetworkFirst",
+              options:{
+                cacheName: "api"
+              }
+            }
+          ]
         }
       }
       )
