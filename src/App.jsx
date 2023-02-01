@@ -9,7 +9,7 @@ import Root from "./routes/root";
 const Fav = lazy(() => import("./routes/Fav"));
 const Login = lazy(() => import("./routes/User/Login"));
 const NotFound = lazy(() => import("./routes/NotFound"));
-const NotRegisteredUser = lazy(() => "./routes/User/NotRegisteredUser");
+const NotRegisteredUser = lazy(() => import("./routes/User/NotRegisteredUser"));
 const PetDetail = lazy(() => import("./routes/PetDetail"));
 const User = lazy(() => import("./routes/User"));
 

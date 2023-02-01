@@ -31,3 +31,29 @@ export default function PhotoCard({ id, likes = 0, src = DEFAULT_IMG, liked }) {
     </div>
   );
 }
+
+export function SquarePhotoCard({ id, src = DEFAULT_IMG }) {
+  const [show, ref] = useNearScreen();
+
+  return (
+    <div className="w-[100px]">
+      <article ref={ref} className="min-h-[100px]">
+        {show && (
+          <div
+            className="animate__animated animate__fadeIn"
+            style={{ "--animate-duration": "1s" }}
+          >
+            <Link to={`/${id}`}>
+              <div className="block h-0 overflow-hidden pt-[100%] relative w-full">
+                <img
+                  className="shadow-sm shadow-gray-100 h-full object-cover absolute top-0 w-full"
+                  src={src}
+                />
+              </div>
+            </Link>
+          </div>
+        )}
+      </article>
+    </div>
+  );
+}
