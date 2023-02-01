@@ -52,9 +52,9 @@ export function ListOfSquarePhotoCards() {
 
   if (loading) {
     return (
-      <ul className="mb-14">
-        {[1, 2, 3].map((element) => (
-          <PhotoCard key={element} />
+      <ul className="mb-14 flex flex-wrap gap-3 justify-center">
+        {[1, 2, 3, 4, 5, 6, 7, 8].map((element) => (
+          <SquarePhotoCard key={element} />
         ))}
       </ul>
     );

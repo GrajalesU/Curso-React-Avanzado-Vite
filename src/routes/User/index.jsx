@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet";
 import footPrint from "../../assets/footPrint.jpg";
 import { useUser } from "../../context/UserContext";
-import { SquarePhotoCard } from "../../components/PhotoCard";
 import { ListOfSquarePhotoCards } from "../../components/ListOfPhotoCards";
 
 export default function User() {
