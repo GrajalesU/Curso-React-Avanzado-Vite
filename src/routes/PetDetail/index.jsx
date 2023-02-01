@@ -45,15 +45,13 @@ export default function PetDetail() {
             <img
               src="https://loremflickr.com/64/64/animals?lock=7"
               alt="profile"
-              className="w-full object-cover rounded-full block"
+              className="w-full min-h-[46.22px] object-cover rounded-full block"
             />
           </div>
           <div className="items-center flex justify-between gap-1 w-full">
-            <p className="block">
-              Wow it's so cute, I love it 💕😁😁💕
-            </p>
+            <p className="block">Wow it's so cute, I love it 💕😁😁💕</p>
             <div className="justify-self-end">
-              <MdFavorite size="24px" color="#758bff"  />
+              <MdFavorite size="24px" color="#758bff" />
             </div>
           </div>
         </li>
@@ -62,15 +60,13 @@ export default function PetDetail() {
             <img
               src="https://loremflickr.com/64/64/animals?lock=10"
               alt="profile"
-              className="w-full object-cover rounded-full block"
+              className="w-full min-h-[46.22px] object-cover rounded-full block"
             />
           </div>
           <div className="items-center flex justify-between gap-1 w-full">
-            <p className="block">
-            This is awesome🔥❤️
-            </p>
+            <p className="block">This is awesome🔥❤️</p>
             <div className="justify-self-end">
-              <MdFavorite size="24px" color="#758bff"  />
+              <MdFavorite size="24px" color="#758bff" />
             </div>
           </div>
         </li>
@@ -79,15 +75,16 @@ export default function PetDetail() {
             <img
               src="https://loremflickr.com/64/64/animals?lock=12"
               alt="profile"
-              className="w-full object-cover rounded-full block"
+              className="w-full min-h-[46.22px] object-cover rounded-full block"
             />
           </div>
           <div className="items-center flex justify-between gap-1 w-full">
             <p className="block">
-            Is that a hexbug or a different toy? Rosie likes playing with these too! 😻
+              Is that a hexbug or a different toy? Rosie likes playing with
+              these too! 😻
             </p>
             <div className="justify-self-end">
-              <MdFavoriteBorder size="24px" color="#758bff"  />
+              <MdFavoriteBorder size="24px" color="#758bff" />
             </div>
           </div>
         </li>
@@ -96,15 +93,15 @@ export default function PetDetail() {
             <img
               src="https://loremflickr.com/64/64/animals?lock=13"
               alt="profile"
-              className="w-full object-cover rounded-full block"
+              className="w-full min-h-[46.22px] object-cover rounded-full block"
             />
           </div>
           <div className="items-center flex justify-between gap-1 w-full">
             <p className="block">
-            ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️😘️😹😹😹😹😹😹😹😹😹😹😹🤣😹😹🤣😹🤣
+              ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️😘️😹😹😹😹😹😹😹😹😹😹😹🤣😹😹🤣😹🤣
             </p>
             <div className="justify-self-end">
-              <MdFavoriteBorder size="24px" color="#758bff"  />
+              <MdFavoriteBorder size="24px" color="#758bff" />
             </div>
           </div>
         </li>
