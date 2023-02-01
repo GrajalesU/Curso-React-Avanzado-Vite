@@ -8,7 +8,8 @@ export default function Fav() {
         <title>PetGram | Favorites</title>
       </Helmet>
       <div>
-        <h1 className="text-lg ml-4 font-semibold">Favorites</h1>
+        <h1 className="text-xl ml-4 font-semibold mb-4">Favorites</h1>
+        <hr className="mx-auto w-[98%]" />
         <Favorites />
       </div>
     </>
